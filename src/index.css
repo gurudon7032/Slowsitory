@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* One-page resume print styling */
+:root {
+  --resume-width: 794px; /* ~A4 at 96dpi */
+}
+
+#resume-container {
+  width: var(--resume-width);
+  background: white;
+  color: #111827;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Header */
+.resume-header { text-align: center; margin-bottom: 12px; }
+.resume-name { letter-spacing: 2px; font-weight: 700; font-size: 28px; }
+.resume-contact { font-size: 12px; color: #6b7280; margin-top: 6px; }
+
+/* Sections */
+.section-title { font-weight: 700; font-size: 12px; color: #111827; width: 120px; }
+.resume-section { display: flex; gap: 16px; margin-top: 12px; }
+.left-col { width: 120px; }
+.right-col { flex: 1; }
+
+.job-title { font-weight: 600; }
+.job-meta { font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+
+/* Print adjustments */
+@media print {
+  body { background: white; }
+  #resume-container { box-shadow: none; width: auto; padding: 20px; }
+  @page { size: A4; margin: 20mm; }
+}
